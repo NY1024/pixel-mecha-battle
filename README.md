@@ -58,9 +58,6 @@ npx serve
 # 然后浏览器访问 http://localhost:8080
 ```
 
-### 方式三：在线 Demo
-
-👉 [点击试玩](https://3a6ff7fa-0p-devc.preview.with.woa.com/index.html)
 
 ---
 
