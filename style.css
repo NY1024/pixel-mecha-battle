@@ -1,0 +1,100 @@
+/* ===== 全局重置 ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0a14;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: 'Courier New', monospace;
+  overflow: hidden;
+  user-select: none;
+}
+
+#game-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ===== 游戏画布容器 ===== */
+#game-container {
+  position: relative;
+  width: 960px;
+  height: 540px;
+  border: 4px solid #2a2a4a;
+  box-shadow:
+    0 0 0 2px #0a0a14,
+    0 0 40px rgba(80, 120, 255, 0.15),
+    0 0 80px rgba(80, 120, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+  image-rendering: pixelated;
+}
+
+#game-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* ===== CRT 扫描线效果 ===== */
+#scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.18),
+    rgba(0, 0, 0, 0.18) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  z-index: 10;
+}
+
+/* ===== CRT 暗角效果 ===== */
+#vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 11;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 50%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+
+/* ===== 控制提示 ===== */
+#controls-hint {
+  display: flex;
+  gap: 40px;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.p1-hint {
+  color: #5080ff;
+  text-shadow: 0 0 8px rgba(80, 128, 255, 0.5);
+}
+
+.p2-hint {
+  color: #ff5050;
+  text-shadow: 0 0 8px rgba(255, 80, 80, 0.5);
+}
